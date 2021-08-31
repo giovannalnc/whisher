@@ -11,7 +11,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user = current_user
     if @list.save
-      redirect_to lists_path
+      redirect_to lists_path, notice: 'The new List was successfully created.'
     else
       render :new
     end
