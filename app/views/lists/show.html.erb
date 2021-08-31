@@ -1,1 +1,16 @@
-<h1> LISTAAAAAA </h1>
+<div class="wrapper">
+  <h1><%= @list.title %></h1>
+  <div class="row d-flex justify-content-center">
+    <div class="col-10">
+      <div class="card card-products">
+        <%= image_tag asset_path("https://static.scientificamerican.com/sciam/cache/file/1DDFE633-2B85-468D-B28D05ADAE7D1AD8_source.jpg?w=590&h=800&D80F3D79-4382-49FA-BE4B4D0C62A5C3ED"), class:"img-fluid" %>
+        <div class="card-body card-body-products">
+          <h5 class="card-title">Books</h5>
+        </div>
+      </div>
+      <div class="btn btn-products w-100">
+        <a href="#">BUY</a>
+      </div>
+    </div>
+  </div>
+</div>
