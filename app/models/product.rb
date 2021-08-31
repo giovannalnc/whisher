@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  has_many :bookmarks
+  belongs_to :list
 
   validates :name, :price, :inventory, presence: true
 end
