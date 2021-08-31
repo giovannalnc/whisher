@@ -4,5 +4,4 @@ class List < ApplicationRecord
 
   # validates :title, presence: true, uniqueness: { unless: -> { title == 'default' } }
   validates :title, presence: true, uniqueness: { scope: :user }
-
 end
