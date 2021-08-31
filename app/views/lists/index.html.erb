@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <h1>WHISHER LISTS</h1>
+  <div class="row d-flex justify-content-center">
+    <% @lists.each do |list| %>
+      <div class="col-10 col-md-4">
+        <div class="card card-index-list">
+          <%= image_tag asset_path("https://agenciaplatz.com.br/wp-content/uploads/2020/07/topo-platz-transformacao-digital-blog-compras-online.png"), class:"img-fluid" %>
+          <div class="card-body">
+            <%= link_to list.title, list_path(list), class:"btn btn-dark" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "New List", new_list_path, class: 'btn btn-dark mt-4' %>
+</div>
