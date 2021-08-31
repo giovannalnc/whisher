@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # para que quando o usuario criar uma conta seja criada tb uma lista padrao
+  # por isso precisamos add um registrations controller
+  devise_for :users, controllers: { registrations: "users/registrations" }
   root to: 'pages#home'
-  resources :lists
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :lists, only: %i[index show new create]
 end

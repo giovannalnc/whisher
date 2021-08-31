@@ -1,0 +1,24 @@
+.card-index-list {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.card-products {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-body-products {
+  background-color: rgb(199, 199, 199);
+  width: 100%;
+  text-align: center;
+}

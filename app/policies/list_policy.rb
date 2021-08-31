@@ -1,7 +1,7 @@
 class ListPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user).all
     end
   end
 

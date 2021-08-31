@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @list = List.find(params[:id])
     authorize @list
   end
 
@@ -13,18 +14,19 @@ class ListsController < ApplicationController
   end
 
   def create
+    @list = List.new(list_params)
+    @list.user = current_user
     authorize @list
+    if @list.save
+      redirect_to lists_path, notice: 'The new List was successfully created.'
+    else
+      render :new
+    end
   end
 
-  def edit
-    authorize @list
-  end
+  private
 
-  def update
-    authorize @list
-  end
-
-  def destroy
-    authorize @list
+  def list_params
+    params.require(:list).permit(:title)
   end
 end
