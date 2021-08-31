@@ -2,8 +2,6 @@
   <div class="bg-white rounded m-5 p-3 shadow">
     <h1 class="text-center"> Create a new list to salve your products</h1>
       <%= simple_form_for(@list) do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <%= f.input :title, placeholder: 'My Books' %>
         <%= f.button :submit, class:'btn btn-dark' %>
       <% end %>
