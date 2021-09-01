@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = policy_scope(Product)
   end
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
@@ -18,6 +19,7 @@ class ProductsController < ApplicationController
     price = html_doc.search('h2').text.strip
     @product.price = price[2..].gsub(',', '.').to_f
     @product.inventory = html_doc.search('h4 b').text.strip
+    authorize @product
     if @product.save
       redirect_to product_path(@product), notice: 'Product was successfully added.'
     else
@@ -29,5 +31,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:url)
+  end
+
+  def destroy
+    authorize @product
   end
 end
