@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 2021_09_01_141843) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "list_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_bookmarks_on_list_id"
+    t.index ["product_id"], name: "index_bookmarks_on_product_id"
+  end
+
   create_table "lists", force: :cascade do |t|
     t.string "title"
     t.bigint "user_id", null: false
@@ -27,10 +36,8 @@ ActiveRecord::Schema.define(version: 2021_09_01_141843) do
     t.string "name"
     t.float "price"
     t.string "inventory"
-    t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["list_id"], name: "index_products_on_list_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_141843) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "lists"
+  add_foreign_key "bookmarks", "products"
   add_foreign_key "lists", "users"
-  add_foreign_key "products", "lists"
 end
