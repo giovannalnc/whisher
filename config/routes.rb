@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   # por isso precisamos add um registrations controller
   devise_for :users, controllers: { registrations: "users/registrations" }
   root to: 'pages#home'
-  resources :lists, only: %i[index show new create]
+  resources :lists
 end
