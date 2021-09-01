@@ -1,1 +1,49 @@
-// Specific CSS for your home-page
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // min-height: 100vh;
+  margin: 20px 50px;
+}
+
+.left-container {
+  width: 35%;
+
+}
+
+.left-container h1 {
+  font-size: 60px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular';
+}
+
+.right-container {
+  background-image: url(asset_path('main-banner.gif'));
+  background-size: cover;
+  background-position: center center;
+  width: 500px;
+  height: 500px;
+}
+
+.first-left {
+  background-image: url(asset_path('easy-manage.svg'));
+  background-size: cover;
+  background-position: center center;
+  width: 300px;
+  height: 300px;
+}
+
+.second-right {
+  background-image: url(asset_path('customized.svg'));
+  background-size: cover;
+  background-position: center center;
+  width: 320px;
+  height: 320px;
+}
+
+.second-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // margin: 80px 50px 40px 50px;
+
+}
