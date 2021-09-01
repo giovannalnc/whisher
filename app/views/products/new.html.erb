@@ -1,8 +1,8 @@
 <h2>Add a product</h2>
 
-<%= simple_form_for(@product) do |f| %>
+<%= simple_form_for([@list, @product]) do |f| %>
   <%= f.input :url %>
   <%= f.submit %>
 <% end %>
 
-<%= link_to 'Back', products_path, class: "btn btn-primary" %>
+<%= link_to 'Back', lists_path, class: "btn btn-primary" %>

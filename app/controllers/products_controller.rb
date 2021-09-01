@@ -1,39 +1,29 @@
 class ProductsController < ApplicationController
-  def index
-    @products = policy_scope(Product)
-  end
-
   def new
     @product = Product.new
+    @list = List.find(params[:list_id])
     authorize @product
   end
 
   def create
+    @list = List.find(params[:list_id])
     @product = Product.new(product_params)
-    url = @product.url
-
-    html_file = HTTParty.get(url)
-    html_doc = Nokogiri::HTML(html_file)
-
-    @product.name = html_doc.search('.product-title').text.strip
-    price = html_doc.search('h2').text.strip
-    @product.price = price[2..].gsub(',', '.').to_f
-    @product.inventory = html_doc.search('h4 b').text.strip
+    @product.list = @list
     authorize @product
     if @product.save
-      redirect_to product_path(@product), notice: 'Product was successfully added.'
+      redirect_to list_path(@list), notice: 'Product was successfully added.'
     else
       render :new
     end
+  end
+
+  def destroy
+    authorize @product
   end
 
   private
 
   def product_params
     params.require(:product).permit(:url)
-  end
-
-  def destroy
-    authorize @product
   end
 end
