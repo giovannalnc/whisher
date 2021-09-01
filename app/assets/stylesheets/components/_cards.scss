@@ -24,14 +24,24 @@
 }
 
 .card-product {
-  overflow: hidden;
+  // overflow: hidden;
   height: 200px;
   background: #F2F2F2;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: center;
 }
+
+// .card-img-left {
+//   float: right;
+// }
+
+// .card-product-info {
+//   display: flex;
+//   justify-content: start;
+//   align-items: center;
+//   width: 600px;
+// }
 
 .card-product img {
   height: 100%;

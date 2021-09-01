@@ -10,11 +10,19 @@
 
 <div class="container my-5">
   <div class="card-product">
-    <%= image_tag asset_path("easy_to_manage.png") %>
-    <h2>Easy way to manage your wish list</h2>
+    <div class="float-left">
+      <%= image_tag asset_path("easy_to_manage.png") %>
+    </div>
+    <div class="d-flex justify-content-start align-items-center">
+      <h2>Easy way to manage your wish list</h2>
+    </div>
   </div>
   <div class="card-product mt-5">
-    <h2>Your wish list customized</h2>
-    <%= image_tag asset_path("customized_list.png") %>
+    <div class="d-flex justify-content-start align-items-center">
+      <h2>Your wish list customized</h2>
+    </div>
+    <div class="float-right">
+      <%= image_tag asset_path("customized_list.png") %>
+    </div>
   </div>
 </div>
