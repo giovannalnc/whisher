@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # por isso precisamos add um registrations controller
   devise_for :users, controllers: { registrations: "users/registrations" }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :lists, only: %i[index show new create] do
+  resources :lists do
     resources :products, only: %i[new create]
   end
   require "sidekiq/web"
