@@ -2,10 +2,18 @@
   <h1><%= @list.title %></h1>
   <div class="row d-flex justify-content-center">
     <div class="col-10">
-      <div class="card card-products">
-        <%= image_tag asset_path("https://static.scientificamerican.com/sciam/cache/file/1DDFE633-2B85-468D-B28D05ADAE7D1AD8_source.jpg?w=590&h=800&D80F3D79-4382-49FA-BE4B4D0C62A5C3ED"), class:"img-fluid" %>
-        <div class="card-body card-body-products">
-          <h5 class="card-title">Books</h5>
+      <% @products.each do |product| %>
+        <div class="card card-products">
+          <% if product.photo.present? %>
+            <%= image_tag asset_url(product.photo), class:"img-fluid" %>
+          <% else %>
+            <%= image_tag asset_url("https://static.scientificamerican.com/sciam/cache/file/1DDFE633-2B85-468D-B28D05ADAE7D1AD8_source.jpg?w=590&h=800&D80F3D79-4382-49FA-BE4B4D0C62A5C3ED"), class:"img-fluid" %>
+          <% end %>
+          <div class="card-body card-body-products">
+            <h5 class="card-title"><%= product.name.present? ? product.name : "Loading..." %></h5>
+            <h6 class="card-inventory"><%= product.inventory.present? ? product.inventory : "Loading..." %></h6>
+            <h6 class="card-price"><%= product.price.present? ? product.price : "Loading..." %></h6>
+          </div>
         </div>
       </div>
       <div class="btn btn-products w-100">
