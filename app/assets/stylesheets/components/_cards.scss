@@ -28,8 +28,9 @@
   height: 200px;
   background: #F2F2F2;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // display: flex;
-  // justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 // .card-img-left {
