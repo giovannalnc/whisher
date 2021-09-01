@@ -1,5 +1,16 @@
 class Product < ApplicationRecord
   belongs_to :list
 
-  validates :name, :price, :inventory, presence: true
+  after_create :scrape
+  validates :url, presence: true
+
+  private
+
+  def scrape
+    if url.include?("leitura.com.br")
+      ScrapeLeituraJob.perform_later(self)
+    elsif url.include?("madeiramadeira.com.br")
+      ScrapeMadeiraJob.perform_later(self)
+    end
+  end
 end
