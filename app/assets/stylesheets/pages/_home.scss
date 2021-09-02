@@ -1,1 +1,50 @@
-// Specific CSS for your home-page
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e3e8f0;
+}
+
+.left-container {
+  width: 35%;
+
+}
+
+.left-container h1 {
+  font-size: 55px;
+  line-height: 56px;
+  font-weight: 500;
+  font-family: 'Karla', sans-serif;
+  letter-spacing: 1px;
+}
+
+.right-container {
+  background-image: url(asset_path('main-banner.gif'));
+  background-size: cover;
+  background-position: center center;
+  width: 500px;
+  height: 500px;
+}
+
+.second-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 60px 120px;
+}
+
+.img-left-container {
+  background-image: url(asset_path('easy-manage.svg'));
+  background-size: cover;
+  background-position: center center;
+  width: 300px;
+  height: 300px;
+}
+
+.img-right-container {
+  background-image: url(asset_path('customized.svg'));
+  background-size: cover;
+  background-position: center center;
+  width: 320px;
+  height: 320px;
+}
