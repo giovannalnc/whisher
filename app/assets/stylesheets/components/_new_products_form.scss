@@ -33,9 +33,6 @@
       font-weight: 300;
       line-height: 1.5;
       color: inherit;
-      &:focus {
-        outline: none !important;
-      }
       &::placeholder {
         color: hsla(212, 69%, 66%, 0.6);
       }
