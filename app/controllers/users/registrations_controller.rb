@@ -1,7 +1,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  def create
-    super
-    List.create!(title: 'My List', user: current_user) if current_user
+  private
+
+  def after_sign_up_path_for(resource)
+    if current_user
+      list = List.create!(title: 'My List', user: current_user)
+      list_path(list)
+    end
   end
 end
 

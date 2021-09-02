@@ -1,4 +1,7 @@
 <div class="wrapper">
+  <% if current_user.lists.count == 1 && @products.empty? %>
+  <h1>BANNER WELCOME</h1>
+  <% end %>
   <h1><%= @list.title %></h1>
   <div class="row d-flex justify-content-center">
     <div class="col-10">
