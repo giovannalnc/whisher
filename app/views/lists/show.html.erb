@@ -1,7 +1,15 @@
+<% if current_user.lists.count == 1 && @products.empty? %>
+  <div class="main-container-show-lists">
+    <div class="left-container-show-lists">
+      <h1>Welcome to Whisher!</h1>
+      <%= link_to 'Add a Product to Your List', new_user_registration_path, class:"btn btn-ghost mt-5" %>
+    </div>
+    <div class="right-container-show-lists">
+    </div>
+  </div>
+<% end %>
+
 <div class="wrapper">
-  <% if current_user.lists.count == 1 && @products.empty? %>
-  <h1>BANNER WELCOME</h1>
-  <% end %>
   <h1><%= @list.title %></h1>
   <div class="row d-flex justify-content-center">
     <div class="col-10">
