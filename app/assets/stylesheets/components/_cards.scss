@@ -4,10 +4,39 @@
   justify-content: center;
   align-items: center;
 
-  &:hover {
-    transform: scale(1.08);
+  // &:hover {
+  //   transform: scale(1.08);
+  // }
+}
+
+.card-body-index-list a {
+  color: black !important;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+}
+
+.card-body-index-list .slide-left-right {
+  text-decoration:none;
+  display: inline-block;
+  color:#6f9bda;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    -webkit-transition: width .5s ease, background-color .5s ease;
+  }
+
+  &:hover:after {
+    width: 100%;
+    background: #6f9bda;
   }
 }
+
+
 
 .card-products {
   margin: 20px 0;
@@ -15,8 +44,6 @@
   justify-content: center;
   align-items: center;
 }
-
-
 .card-body-products {
   background-color: rgb(199, 199, 199);
   width: 100%;
