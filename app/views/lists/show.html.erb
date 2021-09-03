@@ -2,7 +2,7 @@
   <div class="main-container-show-lists">
     <div class="left-container-show-lists">
       <h1>Welcome to Whisher!</h1>
-      <%= link_to 'Add a Product to Your List', new_list_product_path(@list), class:"btn btn-ghost mt-5" %>
+      <%= link_to 'Add a Product to Your List', new_list_product_path(@list), class: "btn btn-ghost mt-5" %>
     </div>
     <div class="right-container-show-lists">
     </div>
@@ -12,6 +12,9 @@
 <div class="container text-center">
   <h1 class="mt-4"><%= @list.title %></h1>
   <div class="d-flex justify-content-end w-100 mr-2">
+    <%= link_to new_list_product_path(@list) do%>
+      <span class="slide-left-right mr-3"><i class="far fa-plus-square"></i> Add item</span>
+    <% end %>
     <%= link_to edit_list_path do%>
       <span class="slide-left-right"><i class="far fa-edit list-fa"></i> Edit list</span>
     <% end %>
@@ -23,22 +26,22 @@
     <% @products.each do |product| %>
       <div class="col-12 col-md-6 col-lg-4 py-4">
         <div class="card-img-product">
-          <%= link_to product_path(product), method: :delete, data: { confirm: 'Are you sure you want to delete this product?' } do%>
+          <%= link_to product_path(product), method: :delete, data: { confirm: 'Are you sure you want to delete this product?' } do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
           <% if product.photo.present? %>
-            <%= image_tag asset_url(product.photo), class:"img-fluid" %>
+            <%= image_tag asset_url(product.photo), class: "img-fluid" %>
           <% else %>
-            <%= image_tag asset_url("loading-img.svg"), class:"img-fluid" %>
+            <%= image_tag asset_url("loading-img.svg"), class: "img-fluid" %>
           <% end %>
         </div>
 
         <div class="card-text-product text-left p-3 d-flex flex-column ">
           <h5 class="flex-grow-1"><%= product.name.present? ? product.name : "Loading..." %></h5>
-          <%# <h6><%= product.inventory.present? ? product.inventory : "Loading..." %>
+          <%# <%= product.inventory.present? ? product.inventory : "Loading..." %>
           <h6><%= product.price.present? ? "U$ #{product.price}" : "Loading..." %></h6>
         </div>
-          <a href="#" class="btn btn-buy w-100">BUY</a>
+          <%= link_to 'BUY', product.url, target: "_blank", class: "btn btn-buy w-100" %>
       </div>
     <% end %>
   </div>
