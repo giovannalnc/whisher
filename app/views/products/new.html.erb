@@ -1,8 +1,15 @@
-<h2>Add a product</h2>
-
-<%= simple_form_for([@list, @product]) do |f| %>
-  <%= f.input :url %>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to 'Back', lists_path, class: "btn btn-primary" %>
+<div class="box product-create">
+  <h2 class="mb-0">Add a product to your wish list!</h2>
+  <div class="create-form mt-4">
+    <%= simple_form_for([@list, @product]) do |f| %>
+      <%= f.text_field :url , label: false, autocomplete: 'off', placeholder: 'Insert the link here', class: "input"%>
+      <button class="submit-url" type="submit"> <span>Add</span></button>
+    <% end %>
+  </div>
+  <div id="buy-back-color">
+    <%= link_to lists_path do %>
+      <i class="fas fa-chevron-left"></i>
+      <i class="fas fa-chevron-left"></i>
+    <% end  %>
+  </div>
+</div>

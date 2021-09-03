@@ -11,10 +11,10 @@ $font-size-base: 1rem;
 
 // Colors
 $body-color: $gray;
-$primary:    $blue;
+$primary:    hsla(212, 69%, 66%, 0.6);
 $success:    $green;
 $info:       $yellow;
-$danger:     $red;
+$danger:     #E71D36;
 $warning:    $orange;
 
 // Buttons & inputs' radius
