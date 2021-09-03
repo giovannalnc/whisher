@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :lists do
     resources :products, only: %i[new create]
   end
+  resources :products, only: %i[destroy]
+
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
