@@ -11,6 +11,14 @@
 
 <div class="container text-center">
   <h1 class="mt-4"><%= @list.title %></h1>
+  <div class="d-flex justify-content-end w-100 mr-2">
+    <%= link_to edit_list_path do%>
+      <i class="far fa-edit mr-3 list-fa slide-left-right"> Edit list</i>
+    <% end %>
+    <%= link_to list_path, method: :delete do %>
+      <i class="fas fa-trash-alt list-fa slide-left-right"> Delete list</i>
+    <% end %>
+  </div>
   <div class="row justify-content-center">
     <% @products.each do |product| %>
       <div class="col-12 col-md-6 col-lg-4 py-4">
@@ -33,6 +41,5 @@
     <% end %>
   </div>
 
-  <%= link_to 'Edit', edit_list_path, class:'btn btn-products w-100 mt-3' %>
-  <%= link_to 'Delete', list_path, method: :delete, class:'btn btn-products w-100 mt-3' %>
+
 </div>
