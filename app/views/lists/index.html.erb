@@ -8,7 +8,7 @@
       <div class="col-10 col-md-3">
         <%= link_to list_path(list) do %>
           <div class="card card-index-list">
-            <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill,  %>
             <div class="card-body-index-list">
               <%= link_to list.title.capitalize, list_path(list), class:"slide-left-right my-5" %>
             </div>
