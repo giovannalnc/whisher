@@ -12,11 +12,18 @@
 @import "components/index";
 @import "pages/index";
 
-html {
-  position: relative;
-  min-height: 100%;
-}
+// html {
+//   position: relative;
+//   min-height: 100%;
+// }
 
 a {
   text-decoration: none;
+}
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
