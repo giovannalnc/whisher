@@ -13,10 +13,10 @@
   <h1 class="mt-4"><%= @list.title %></h1>
   <div class="d-flex justify-content-end w-100 mr-2">
     <%= link_to edit_list_path do%>
-      <i class="far fa-edit mr-3 list-fa slide-left-right"> Edit list</i>
+      <span class="slide-left-right"><i class="far fa-edit list-fa"></i> Edit list</span>
     <% end %>
     <%= link_to list_path, method: :delete do %>
-      <i class="fas fa-trash-alt list-fa slide-left-right"> Delete list</i>
+      <span class="ml-3 slide-left-right"><i class="fas fa-trash-alt list-fa"></i> Delete list</span>
     <% end %>
   </div>
   <div class="row justify-content-center">
