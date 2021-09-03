@@ -3,6 +3,7 @@
   font-family: 'Karla', sans-serif;
   padding: 6em 0;
   text-align: center;
+  height: 85vh;
 
   h2 {
     margin: 0 0 .85em 0;
@@ -17,15 +18,18 @@
     max-width: 600px;
     margin: auto;
 
-    .form-control:focus {
+    .input[type=text]:focus {
       box-shadow: none;
+      outline: none !important;
+      outline-width: 0 !important;
+      border: 0;
     }
 
     #product_url {
       width: 100%;
       background: transparent;
       border: 0;
-      border-bottom: 1px solid;
+      border-bottom: 1px solid #011627;
       padding: 1em 0 .8em;
       text-align: center;
       font-size: 18px;
@@ -93,4 +97,15 @@
             transform: translateX(113.5px);
         }
     }
+}
+
+#buy-back-color {
+    padding: 200px 0 100px 100px;
+    width: 100%;
+    text-align: left;
+}
+
+.buy-button {
+    color: white;
+    border: none;
 }
