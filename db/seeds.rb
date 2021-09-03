@@ -17,7 +17,7 @@ wardrobe = List.create!(user: mariana, title: 'Wardrobe')
 desks = List.create!(user: mariana, title: 'Desks')
 decor = List.create!(user: mariana, title: 'Decor')
 
-leitura_hp_urls = ['https://leitura.com.br/harry-potter-e-a-camara-secreta-rocco-L999-9788532511669?search=harry%20potter', 'https://leitura.com.br/harry-potter-e-a-camara-secreta-L999-9788532530790?search=harry%20potter', 'https://leitura.com.br/harry-potter-e-o-prisioneiro-de-azkaban-L999-9788532512062?search=harry%20potter']
+leitura_hp_urls = ['https://leitura.com.br/harry-potter-e-a-pedra-filosofal-L999-9788532511010?search=harry%20potter', 'https://leitura.com.br/harry-potter-e-a-camara-secreta-L999-9788532530790?search=harry%20potter', 'https://leitura.com.br/harry-potter-e-o-prisioneiro-de-azkaban-L999-9788532512062?search=harry%20potter']
 
 madeira_couchs_urls = ['https://www.madeiramadeira.com.br/sofa-prime-5-lugares-retratil-reclinavel-2-50m-com-molas-yescasa-629167.html?index=vr-prod-poc-madeira-listings-best-seller-desc', 'https://www.madeiramadeira.com.br/sofa-cama-melissa-3-lugares-180cm-viero-648372.html?index=vr-prod-poc-madeira-listings-best-seller-desc', 'https://www.madeiramadeira.com.br/sofa-3-lugares-retratil-1-80m-smart-yescasa-668037.html?index=vr-prod-poc-madeira-listings-best-seller-desc']
 
