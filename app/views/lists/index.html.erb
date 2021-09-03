@@ -7,6 +7,7 @@
           <%= image_tag asset_path("https://agenciaplatz.com.br/wp-content/uploads/2020/07/topo-platz-transformacao-digital-blog-compras-online.png"), class:"img-fluid" %>
           <div class="card-body">
             <%= link_to list.title, list_path(list), class:"btn btn-dark" %>
+            <%= link_to 'Delete', list_path(list), method: :delete, class:'btn btn-dark' %>
           </div>
         </div>
       </div>
