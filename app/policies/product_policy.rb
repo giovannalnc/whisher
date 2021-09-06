@@ -10,7 +10,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    owner_or_admin?
   end
 
   def create?
