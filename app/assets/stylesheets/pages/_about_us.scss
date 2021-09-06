@@ -1,0 +1,23 @@
+.aboutus-left-container {
+  background-image: url(asset_path('about_us/about-us-banner.svg'));
+  background-size: cover;
+  background-position: center center;
+  width: 300px;
+  height: 300px;
+}
+
+.aboutus-right-container {
+  width: 35%;
+
+  h1 {
+    font-size: 45px;
+    font-weight: 500;
+    font-family: 'Karla', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+  }
+}

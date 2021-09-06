@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
   get '/services', to: 'pages#services'
+  get '/about_us', to: 'pages#about_us'
   root to: 'pages#home'
 end
