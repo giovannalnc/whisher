@@ -10,12 +10,11 @@
           <div class="card card-index-list">
             <%= image_tag asset_path("https://agenciaplatz.com.br/wp-content/uploads/2020/07/topo-platz-transformacao-digital-blog-compras-online.png"), class:"img-fluid" %>
             <div class="card-body-index-list">
-              <%= link_to list.title.capitalize, list_path(list), class:"slide-left-right my-5" %>
+              <%= render 'list_info', list: list  %>
             </div>
           </div>
         <% end %>
       </div>
     <% end %>
   </div>
-  <%# <%= link_to "New List", new_list_path, class: 'btn btn-ghost mt-4' %>
 </div>
