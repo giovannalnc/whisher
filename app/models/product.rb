@@ -5,6 +5,12 @@ class Product < ApplicationRecord
   after_create :scrape
   validates :url, presence: true
 
+  def delivery_mail
+    if last_price > price
+      decrease_price.deliver_now
+    end
+  end
+
   private
 
   def scrape
