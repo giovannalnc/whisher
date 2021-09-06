@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @list = List.find(params[:list_id])
+    @product.list = @list
     authorize @product
   end
 

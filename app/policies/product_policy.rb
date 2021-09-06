@@ -9,11 +9,8 @@ class ProductPolicy < ApplicationPolicy
     true
   end
 
-  def new?
-    owner_or_admin?
-  end
-
   def create?
+    #user.lists.include?(record.list)
     true
   end
 
