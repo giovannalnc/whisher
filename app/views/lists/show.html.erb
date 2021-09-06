@@ -27,7 +27,16 @@
   <%#         SEARCH PRODUCTS BY AJAX %>
   <%# ------------------------------------------- %>
   <div data-controller="search-products">
-    <input type="text" data-search-products-target="input" data-search-products-action="keyup->search-products#update" placeholder="Search a product" class="form-control">
+    <%= form_with url: list_path, method: :get, html: { class:
+    'my-3', data: { search_products_target: 'form' } } do |f| %>
+      <%= f.text_field :query,
+                      class: "form-control",
+                      placeholder: 'Type a product name',
+                      value: params[:query],
+                      data: { search_products_target: 'input', action: 'keyup->search-products#update' }
+                      %>
+    <% end %>
+
     <div class="row justify-content-center">
       <% @products.each do |product| %>
         <div class="col-12 col-md-6 col-lg-4 py-4" data-search-products-target="product" data-product-name="<%= product.name.present? ? product.name : "Loading..." %>">
