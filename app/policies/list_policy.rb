@@ -6,7 +6,7 @@ class ListPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    owner_or_admin?
   end
 
   def new?
