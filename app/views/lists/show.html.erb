@@ -18,7 +18,7 @@
     <%= link_to edit_list_path do%>
       <span class="slide-left-right"><i class="far fa-edit list-fa"></i> Edit list</span>
     <% end %>
-    <%= link_to list_path, method: :delete do %>
+    <%= link_to list_path, method: :delete, data: { confirm: 'Are you sure you want to delete this list?' } do %>
       <span class="ml-3 slide-left-right"><i class="fas fa-trash-alt list-fa"></i> Delete list</span>
     <% end %>
   </div>
