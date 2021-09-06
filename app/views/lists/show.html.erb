@@ -31,7 +31,7 @@
     'my-3', data: { search_products_target: 'form' } } do |f| %>
       <%= f.text_field :query,
                       class: "form-control",
-                      placeholder: 'Type a product name',
+                      placeholder: 'Serach for a product',
                       value: params[:query],
                       data: { search_products_target: 'input', action: 'keyup->search-products#update' }
                       %>
