@@ -10,6 +10,8 @@ class UserMailer < ApplicationMailer
   end
 
   def decrease_price
-
+    @product = params[:product]
+    @user = @product.user
+    mail(to: @user.email, subject: 'Hello user!')
   end
 end
