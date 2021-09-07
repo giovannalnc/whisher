@@ -14,6 +14,10 @@ class Product < ApplicationRecord
       ScrapeMadeiraJob.perform_later(self)
     elsif url.include?("hm.com")
       ScrapeHmJob.perform_later(self)
+    elsif url.include?("kobo.com")
+      ScrapeKoboJob.perform_later(self)
+    elsif url.include?("mygeekbox.us")
+      ScrapeGeekboxJob.perform_later(self)
     end
   end
 end
