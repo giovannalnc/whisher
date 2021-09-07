@@ -5,8 +5,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @products = @list.products
     authorize @list
+    @products = @list.products
   end
 
   def update

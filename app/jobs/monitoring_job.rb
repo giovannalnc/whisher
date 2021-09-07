@@ -17,7 +17,7 @@ class MonitoringJob < ApplicationJob
     p price
 
     if price < product.price
-      puts "O preço do #{product.name} agora é #{price}"
+      UserMailer.with(product: product).decrease_price.deliver_later
     elsif price > product.price
       puts "O preço do #{product.name} aumentou!"
     else

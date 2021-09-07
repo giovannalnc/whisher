@@ -4,9 +4,9 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.hello.subject
   #
-  def hello(user)
-    @user = user
-    mail(to: user.email, subject: 'Hello user!')
+  def hello
+    @user = params[:user]
+    mail(to: @user.email, subject: 'Hello user!')
   end
 
   def decrease_price
