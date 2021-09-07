@@ -14,9 +14,9 @@ class ScrapeHmJob < ApplicationJob
     html_doc = Nokogiri::HTML(html_file)
 
     product.name = html_doc.search('.name-price > h1').text.strip
-    price = html_doc.search('.product-detail-info__price').text.strip
-    product.price = price[0..-5].to_f
-    product.photo = html_doc.search('.media-image__image').attr("src").value
+    price = html_doc.search('div > span').text.strip.match(/\d+\.\d+/)
+    product.price = price[0].to_f
+    product.photo = html_doc.search('div > img').attr("src").value
     product.save!
   end
 end
