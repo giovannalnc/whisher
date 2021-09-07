@@ -1,0 +1,27 @@
+.aboutus-left-container {
+  width: 35%;
+  h1 {
+    font-size: 45px;
+    font-weight: 500;
+    font-family: 'Karla', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+  }
+
+}
+
+.aboutus-right-container {
+  background-image: url(asset_path('about_us/about-us-banner.svg'));
+  background-size: cover;
+  background-position: center center;
+  width: 350px;
+  height: 350px;
+}
+
+.aboutus-icon {
+  font-size: 20px;
+}
