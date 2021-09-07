@@ -29,6 +29,10 @@ class ListPolicy < ApplicationPolicy
     owner_or_admin?
   end
 
+  def new_product?
+    owner_or_admin?
+  end
+
   private
 
   def owner_or_admin?

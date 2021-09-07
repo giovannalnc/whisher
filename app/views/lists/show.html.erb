@@ -2,7 +2,9 @@
   <div class="main-container-show-lists">
     <div class="left-container-show-lists">
       <h1>Welcome to Whisher!</h1>
+      <% if policy(List).create? %>
         <%= link_to 'Add a Product to Your List', new_list_product_path(@list), class: "btn btn-ghost mt-5" %>
+      <% end %>
     </div>
     <div class="right-container-show-lists">
     </div>
@@ -12,7 +14,7 @@
 <div class="container text-center">
   <h1 class="mt-4"><%= @list.title %></h1>
   <div class="d-flex justify-content-end w-100 mr-2">
-    <% if policy(Product).create? %>
+    <% if policy(List).create? %>
       <%= link_to new_list_product_path(@list) do%>
         <span class="slide-left-right mr-3"><i class="far fa-plus-square"></i> Add item</span>
       <% end %>
