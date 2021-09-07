@@ -14,7 +14,6 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    #user.lists.include?(record.list)
     true
   end
 
