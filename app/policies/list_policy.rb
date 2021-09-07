@@ -6,7 +6,7 @@ class ListPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    owner_or_admin?
   end
 
   def new?
@@ -26,6 +26,10 @@ class ListPolicy < ApplicationPolicy
   end
 
   def destroy?
+    owner_or_admin?
+  end
+
+  def new_product?
     owner_or_admin?
   end
 

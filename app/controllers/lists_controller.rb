@@ -5,23 +5,17 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    authorize @list
     @products = @list.products
-    authorize @list
-  end
-
-  def edit
-    @list = List.find(params[:id])
-    authorize @list
   end
 
   def update
     @list = List.find(params[:id])
     @list.user = current_user
     authorize @list
-    if @list.update(list_params)
-      redirect_to lists_path, notice: 'Your List was successfully updated.'
-    else
-      render :edit
+    @list.update(list_params)
+    respond_to do |format|
+      format.text { render partial: 'lists/list_info', locals: { list: @list }, formats: [:html] }
     end
   end
 

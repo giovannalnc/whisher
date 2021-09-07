@@ -1,7 +1,11 @@
 <div class="main-container">
   <div class="left-container">
     <h1>Your Online Shopping List in One Place</h1>
-    <%= link_to 'Sign up', new_user_registration_path, class:"btn btn-ghost mt-5" %>
+    <% if current_user %>
+      <%= link_to 'See Your Lists', lists_path, class:"btn btn-ghost mt-5" %>
+    <% else  %>
+      <%= link_to 'Sign up', new_user_registration_path, class:"btn btn-ghost mt-5" %>
+    <% end %>
   </div>
   <div class="right-container">
   </div>

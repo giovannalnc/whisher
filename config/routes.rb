@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # por isso precisamos add um registrations controller
   devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :lists do
+  resources :lists, except: :edit do
     resources :products, only: %i[new create]
   end
   resources :products, only: %i[destroy]
@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
+  get '/services', to: 'pages#services'
+  get '/about_us', to: 'pages#about_us'
   root to: 'pages#home'
 end
