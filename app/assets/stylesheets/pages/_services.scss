@@ -1,0 +1,42 @@
+.services-left-container {
+  background-image: url(asset_path('services/services-banner.svg'));
+  background-size: cover;
+  background-position: center center;
+  width: 350px;
+  height: 350px;
+}
+
+.services-right-container {
+  width: 35%;
+
+  h1 {
+    font-size: 45px;
+    font-weight: 500;
+    font-family: 'Karla', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+  }
+}
+
+.services-second-container {
+
+  a {
+    text-decoration: none;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .main-container {
+    flex-direction: column;
+  }
+
+  .services-right-container {
+    width: 100%;
+    padding: 10px 30px;
+  }
+}
