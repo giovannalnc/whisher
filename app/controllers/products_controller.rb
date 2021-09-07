@@ -2,15 +2,14 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @list = List.find(params[:list_id])
-    @product.list = @list
-    authorize @product
+    authorize @list, :new_product?
   end
 
   def create
     @list = List.find(params[:list_id])
     @product = Product.new(product_params)
     @product.list = @list
-    authorize @product
+    authorize @list, :new_product?
     if @product.save
       redirect_to list_path(@list), notice: 'Product was successfully added.'
     else

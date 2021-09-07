@@ -9,6 +9,10 @@ class ProductPolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    true
+  end
+
   def create?
     #user.lists.include?(record.list)
     true
