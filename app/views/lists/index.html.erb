@@ -1,20 +1,30 @@
-<div class="wrapper">
-  <h1>WHISHER LISTS</h1>
-  <div class="d-flex justify-content-end w-75 mr-2">
-    <%= link_to "+ New List", new_list_path, class: "slide-left-right new-list" %>
+<div class="main-container-lists">
+  <div class="left-list-container">
+    <h1>WHISHER LISTS</h1>
+    <div class="d-flex justify-content-start w-75">
+      <%= link_to "+ New List", new_list_path, class: "slide-left-right", id:"new-list" %>
+    </div>
   </div>
+
+  <div class="right-list-container">
+  </div>
+</div>
+
+<div class="wrapper">
+
+
   <div class="row justify-content-center">
     <% @lists.each do |list| %>
-      <div class="col-10 col-md-3">
+      <%# <div class="col-10 col-md-4"> %>
         <%= link_to list_path(list) do %>
-          <div class="card card-index-list">
-            <%= image_tag asset_path("https://agenciaplatz.com.br/wp-content/uploads/2020/07/topo-platz-transformacao-digital-blog-compras-online.png"), class:"img-fluid" %>
-            <div class="card-body-index-list">
+          <div class="card card-index-list m-3" style="width: 16rem; height: 22rem;">
+            <%= list.photo.attached? ? (cl_image_tag list.photo.key, class: "card-img-top") : (image_tag asset_path("default-list-img.svg"), class: "card-img-top") %>
+            <div class="card-body card-body-list">
               <%= render 'list_info', list: list  %>
             </div>
           </div>
         <% end %>
-      </div>
+      <%# </div> %>
     <% end %>
   </div>
 </div>

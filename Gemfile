@@ -29,6 +29,7 @@ gem 'sidekiq-failures', '~> 1.0'
 gem 'httparty'
 gem 'simple_token_authentication'
 
+gem 'cloudinary', '~> 1.16.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -48,6 +49,8 @@ group :development, :test do  gem 'pry-byebug'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+
 end
 
 group :development do
