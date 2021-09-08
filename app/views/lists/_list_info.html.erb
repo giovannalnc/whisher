@@ -6,10 +6,10 @@
   <%= simple_form_for list, remote: true, html: { class: 'd-none', data: { edit_list_target: 'form', action: 'submit->edit-list#update' } } do |f| %>
     <div class="row d-flex justify-content-center py-4">
       <div class="col-10">
-        <%= f.input :title, label: false, placeholder: 'My Books' %>
+        <%= f.input :title, label: false, placeholder: 'My Books', input_html: { data: { edit_list_target: 'input', action: 'input->edit-list#check' } } %>
       </div>
       <div class="col-10 text-center">
-        <%= f.button :submit, class:'btn btn-dark' %>
+        <%= f.button :submit, class:'btn btn-primary', data: { edit_list_target: 'submit'} %>
       </div>
     </div>
   <% end %>

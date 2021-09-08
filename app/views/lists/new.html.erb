@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row flex-column justify-content-center align-items-center">
     <div class="col-12 col-md-8">
-      <div class="bg-white rounded m-5 p-3 shadow">
-        <h1 class="text-center"> Create a new list to salve your products</h1>
+      <div class="form-lists">
+        <h1> Create a new list to save your products</h1>
           <%= simple_form_for(@list) do |f| %>
             <%= f.input :title, placeholder: 'My Books' %>
-            <%= f.button :submit, class:'btn btn-dark' %>
+            <%= f.button :submit, class:'btn btn-primary' %>
           <% end %>
       </div>
     </div>
