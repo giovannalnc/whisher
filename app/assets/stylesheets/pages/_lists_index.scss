@@ -1,4 +1,25 @@
-.new-list {
+.main-container-lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3e8f0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.right-list-container {
+  background-image: url(asset_path('banner-my-lists.svg'));
+  background-size: cover;
+  background-position: center center;
+  width: 350px;
+  height: 350px;
+  margin: 15px 0;
+}
+
+
+#new-list {
   font-size: 20px;
   font-family: 'Karla', sans-serif;
   color: #6f9bda;
@@ -6,9 +27,4 @@
   &:hover {
     color: #6f9bda;
   }
-}
-
-.new-list-fa {
-  color: #6f9bda;
-  font-size: 12px;
 }

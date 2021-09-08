@@ -36,16 +36,19 @@
   <%# ------------------------------------------- %>
   <%#         SEARCH PRODUCTS BY AJAX %>
   <%# ------------------------------------------- %>
+
   <div data-controller="search-products">
-    <%= form_with url: list_path, method: :get, html: { class:
-    'my-3', data: { search_products_target: 'form' } } do |f| %>
-      <%= f.text_field :query,
-                      class: "form-control mt-4",
-                      placeholder: 'Search for a product',
-                      value: params[:query],
-                      data: { search_products_target: 'input', action: 'keyup->search-products#update' }
-                      %>
-    <% end %>
+    <%# <%= if @products.count != 0 %>
+      <%= form_with url: list_path, method: :get, html: { class:
+      'my-3', data: { search_products_target: 'form' } } do |f| %>
+        <%= f.text_field :query,
+                        class: "form-control mt-4",
+                        placeholder: 'Search for a product',
+                        value: params[:query],
+                        data: { search_products_target: 'input', action: 'keyup->search-products#update' }
+                        %>
+      <% end %>
+    <%# <% end %>
 
     <div class="row justify-content-center">
       <% @products.each do |product| %>
