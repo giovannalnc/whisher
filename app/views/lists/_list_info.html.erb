@@ -1,10 +1,12 @@
 <div class="list-title" data-controller="edit-list" data-edit-list-target="info">
   <h3 class="mt-4 card-list-content text-center"  data-edit-list-target="title"><%= link_to list.title.capitalize, list_path(list), class:"slide-left-right"%>
-    <i class="far fa-edit list-fa" data-action="click->edit-list#displayForm"></i>
+    <a href="#collapseExample" data-toggle="collapse">
+      <i class="far fa-edit list-fa ml-1" data-action="click->edit-list#displayForm"></i>
+    </a>
   </h3>
 
   <%= simple_form_for list, remote: true, html: { class: 'd-none', data: { edit_list_target: 'form', action: 'submit->edit-list#update' } } do |f| %>
-    <div class="row d-flex justify-content-center py-4">
+    <div class="row d-flex justify-content-center py-4 collapse" id="collapseExample">
       <div class="col-10">
         <%= f.input :title, label: false, placeholder: 'My Books', input_html: { data: { edit_list_target: 'input', action: 'input->edit-list#check' } } %>
       </div>
@@ -12,7 +14,7 @@
         <%= f.button :submit, class:'btn btn-primary', data: { edit_list_target: 'submit'} %>
       </div>
       <div class="col-10 text-center">
-        <%= f.input :photo, as: :file %>
+        <%= f.input :photo, as: :file, method: :update, input_html: { class: 'd-none'}, label_html: { class: 'upload-photo mt-3'}, label: '📷 Upload a photo'  %>
       </div>
     </div>
   <% end %>

@@ -5,7 +5,7 @@
         <h1> Create a new list to save your products</h1>
           <%= simple_form_for(@list) do |f| %>
             <%= f.input :title, placeholder: 'My Books' %>
-            <%= f.input :photo, as: :file %>
+            <%= f.input :photo, input_html: { class: 'd-none'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'  %>
             <%= f.button :submit, class:'btn btn-primary' %>
           <% end %>
       </div>
