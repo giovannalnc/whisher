@@ -1,7 +1,7 @@
 <div class="list-title" data-controller="edit-list" data-edit-list-target="info">
-  <h1 class="mt-4" data-edit-list-target="title"><%= link_to list.title.capitalize, list_path(list), class:"slide-left-right my-5"%>
+  <h3 class="mt-4 card-list-content text-center"  data-edit-list-target="title"><%= link_to list.title.capitalize, list_path(list), class:"slide-left-right"%>
     <i class="far fa-edit list-fa" data-action="click->edit-list#displayForm"></i>
-  </h1>
+  </h3>
 
   <%= simple_form_for list, remote: true, html: { class: 'd-none', data: { edit_list_target: 'form', action: 'submit->edit-list#update' } } do |f| %>
     <div class="row d-flex justify-content-center py-4">
@@ -10,6 +10,9 @@
       </div>
       <div class="col-10 text-center">
         <%= f.button :submit, class:'btn btn-primary', data: { edit_list_target: 'submit'} %>
+      </div>
+      <div class="col-10 text-center">
+        <%= f.input :photo, as: :file %>
       </div>
     </div>
   <% end %>
