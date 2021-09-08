@@ -12,6 +12,7 @@
                         autofocus: true,
                         placeholder: "name@email.com",
                         input_html: { autocomplete: "email" }%>
+                        <%= f.input :photo, as: :file %>
             <%= f.input :password,
                         required: true,
                         placeholder: "......",
