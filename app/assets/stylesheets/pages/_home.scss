@@ -34,7 +34,7 @@
 }
 
 .img-left-container {
-  background-image: url(asset_path('easy-manage.svg'));
+  background-image: url(asset_path('easy-manage2.svg'));
   background-size: cover;
   background-position: center center;
   width: 300px;
@@ -42,9 +42,31 @@
 }
 
 .img-right-container {
-  background-image: url(asset_path('customized.svg'));
+  background-image: url(asset_path('customized2.svg'));
   background-size: cover;
   background-position: center center;
   width: 320px;
   height: 320px;
+}
+
+
+@media screen and (max-width: 768px){
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-container {
+    width: 100%;
+    padding: 10px 30px;
+  }
+
+  .second-container {
+    flex-direction: column;
+  }
+
+  .img-left-container {
+    width: 100%;
+    padding: 10px 30px;
+  }
+
 }
