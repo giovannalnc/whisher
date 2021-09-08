@@ -27,7 +27,6 @@ gem 'sidekiq-failures', '~> 1.0'
 
 #gem 'open-uri'
 gem 'httparty'
-gem 'whenever', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
