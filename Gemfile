@@ -27,6 +27,7 @@ gem 'sidekiq-failures', '~> 1.0'
 
 #gem 'open-uri'
 gem 'httparty'
+gem 'simple_token_authentication'
 
 gem 'cloudinary', '~> 1.16.0'
 
