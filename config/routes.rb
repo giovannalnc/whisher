@@ -12,6 +12,13 @@ Rails.application.routes.draw do
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :lists, only: %i[index show update create destroy]
+    end
+  end
+
   get '/services', to: 'pages#services'
   get '/about_us', to: 'pages#about_us'
   root to: 'pages#home'
