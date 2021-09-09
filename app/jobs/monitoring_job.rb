@@ -13,8 +13,6 @@ class MonitoringJob < ApplicationJob
     html_doc = Nokogiri::HTML(html_file)
 
     price = html_doc.search('h2').text.strip.gsub(/[R$]/, ' ').gsub(/,/, '.').to_f
-    p product.price
-    p price
 
     if price < product.price
       product.update(price: price)
