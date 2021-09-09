@@ -35,7 +35,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initSweetalert('#sweet-alert-demo', {
-    title: "Are you sure?",
+    title: "Are you sure you want to delete this list?",
     text: "This action cannot be reversed",
     icon: "warning"
   }, (value) => {
@@ -46,7 +46,7 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   initSweetalertProduct('.sweet-alert-product', {
-    title: "Are you sure?",
+    title: "Are you sure you want to delete this product?",
     text: "This action cannot be reversed",
     icon: "warning"
   });
