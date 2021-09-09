@@ -4,6 +4,13 @@ class Product < ApplicationRecord
 
   after_create :scrape
   validates :url, presence: true
+  validate :verify_url
+
+  def verify_url
+    unless url.include?("leitura.com.br") || url.include?("madeiramadeira.com.br") || url.include?("hm.com") || url.include?("kobo.com") || url.include?("mygeekbox.us")
+      errors.add(:url, message: "*Sorry, store not supported yet.")
+    end
+  end
 
   private
 
@@ -20,4 +27,5 @@ class Product < ApplicationRecord
       ScrapeGeekboxJob.perform_later(self)
     end
   end
+
 end
