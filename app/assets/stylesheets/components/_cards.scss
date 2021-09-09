@@ -81,12 +81,19 @@
 
 }
 
+.card-img-product:hover {
+  .fas {
+    opacity: 0.6;
+  }
+}
+
 .card-img-product .fas {
   color: #EF306A;
   position: absolute;
   top: 56px;
   right: 26px;
-  opacity: 0.6;
+  opacity: 0;
+  transition: 0.3s ease;
 }
 
 .card-text-product {
