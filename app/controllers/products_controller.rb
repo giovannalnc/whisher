@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to list_path(@list), notice: 'Product was successfully added.'
     else
-      render :new
+      render :new, alert: 'Sorry.'
     end
   end
 

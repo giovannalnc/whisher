@@ -3,8 +3,14 @@
   <div class="create-form mt-4">
     <%= simple_form_for([@list, @product]) do |f| %>
       <%= f.text_field :url , label: false, autocomplete: 'off', placeholder: 'Insert the link here', class: "input"%>
+      <% if @product.errors.any? %>
+        <% @product.errors.messages.each do |message| %>
+          <p id="error-message"><%= message[1][0][:message] %></p>
+        <% end %>
+      <% end %>
       <button class="submit-url" type="submit"> <span>Add</span></button>
     <% end %>
+
   </div>
   <div id="buy-back-color">
     <%= link_to lists_path do %>
