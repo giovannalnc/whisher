@@ -5,8 +5,8 @@ List.delete_all
 User.destroy_all
 
 puts 'Creating users...'
-mariana = User.create!(email: 'mariana@wisher.com', password: 123123 )
-giovanna = User.create!(email: 'giovanna@wisher.com', password: 123456 )
+mariana = User.create!(email: 'mariana@whisher.com', password: 123123 )
+giovanna = User.create!(email: 'giovanna@whisher.com', password: 123456 )
 
 puts 'Creating lists...'
 harry_potter_books = List.create!(user: mariana, title: 'Harry Potter Books')
@@ -33,7 +33,7 @@ madeira_desks_urls = ['https://www.madeiramadeira.com.br/escrivaninha-120cm-port
 
 madeira_decor_urls = ['https://www.madeiramadeira.com.br/conjunto-kit-5-quadros-decorativos-geometrico-rose-gold-quarto-sala-2625631.html?index=vr-prod-poc-madeira-listings-best-seller-desc', 'https://www.madeiramadeira.com.br/conjunto-kit-6-quadros-decorativos-amarelo-cinza-e-preto-geometrico-quarto-sala-2638159.html?index=vr-prod-poc-madeira-listings-best-seller-desc', 'https://www.madeiramadeira.com.br/quadro-mosaico-paisagem-verde-5-pecas-1-20x0-70cm-2247670.html?index=vr-prod-poc-madeira-listings-best-seller-desc']
 
-kobo_manga_urls = ['https://www.kobo.com/us/en/ebook/naruto-vol-28', 'https://www.kobo.com/br/en/ebook/saint-seiya-les-chevaliers-du-zodiaque-the-lost-canvas-la-legende-d-hades-tome-01-extrait-gratuit', 'https://www.kobo.com/br/en/ebook/hunter-x-hunter-vol-03', 'https://www.kobo.com/br/en/ebook/fairy-tail-100-years-quest-1']
+kobo_manga_urls = ['https://www.kobo.com/us/en/ebook/yuyu-hakusho-vol-19', 'https://www.kobo.com/us/en/ebook/naruto-vol-28', 'https://www.kobo.com/us/en/ebook/fairy-tail-2-7', 'https://www.kobo.com/us/en/ebook/one-punch-man-vol-19']
 
 geek_col_urls = ['https://www.mygeekbox.us/merch-figures/marvel-x-men-classic-rogue-pop-vinyl-figure/12275585.html', 'https://www.mygeekbox.us/merch-figures/adventure-time-x-minecraft-marceline-pop-vinyl-figure/11704928.html', 'https://www.mygeekbox.us/merch-figures/dragon-ball-z-goku-world-tournament-pop-vinyl-figure/12128578.html', 'https://www.mygeekbox.us/merch-figures/saint-seiya-andromeda-shun-funko-pop-vinyl/12365144.html', 'https://www.mygeekbox.us/merch-action-figures/hasbro-star-wars-the-mandalorian-the-child-baby-yoda-animatronic-figure/12433534.html']
 
