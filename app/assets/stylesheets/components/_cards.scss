@@ -7,7 +7,6 @@
   background-color: #e3e8f0;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   overflow: hidden;
-
   &:hover {
     // transform: scale(1.02);
     transform: translateY(-6px);
@@ -111,4 +110,8 @@
   img {
     border-radius: 5px 5px 0 0;
   }
+}
+
+.form-control.is-valid{
+  background-image: none;
 }
