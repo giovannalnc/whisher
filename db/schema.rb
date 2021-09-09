@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2021_09_08_141058) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "url"
     t.string "photo"
-    t.float "last_price"
     t.index ["list_id"], name: "index_products_on_list_id"
   end
 
