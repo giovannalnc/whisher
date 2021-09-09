@@ -24,6 +24,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers"
+
+import { initSweetalert, initSweetalertProduct } from '../plugins/init_sweetalert';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -31,6 +34,20 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-});
+  initSweetalert('#sweet-alert-demo', {
+    title: "Are you sure?",
+    text: "This action cannot be reversed",
+    icon: "warning"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#delete-link');
+      link.click();
+    }
+  });
 
-import "controllers"
+  initSweetalertProduct('.sweet-alert-product', {
+    title: "Are you sure?",
+    text: "This action cannot be reversed",
+    icon: "warning"
+  });
+});
