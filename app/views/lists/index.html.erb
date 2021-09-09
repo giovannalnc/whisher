@@ -11,20 +11,9 @@
 </div>
 
 <div class="wrapper">
-
-
   <div class="row justify-content-center">
     <% @lists.each do |list| %>
-      <%# <div class="col-10 col-md-4"> %>
-        <%= link_to list_path(list) do %>
-          <div class="card card-index-list m-3" style="width: 16rem; height: 80%;">
-            <%= list.photo.attached? ? (cl_image_tag list.photo.key, class: "card-img-top") : (image_tag asset_path("default-list-img.svg"), class: "card-img-top") %>
-            <div class="card-body card-body-list mb-3">
-              <%= render 'list_info', list: list %>
-            </div>
-          </div>
-        <% end %>
-      <%# </div> %>
+      <%= render 'list_info', list: list  %>
     <% end %>
   </div>
 </div>
