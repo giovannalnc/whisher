@@ -20,6 +20,7 @@ export default class extends Controller {
     event.preventDefault();
     const url = this.formTarget.action
     const csrftoken = document.querySelector('meta[name="csrf-token"]').content
+    console.log(this.formTarget);
     fetch(url, {
       method: 'PATCH',
       headers: { 'Accept': 'text/plain', 'X-CSRF-Token': csrftoken },

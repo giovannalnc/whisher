@@ -1,21 +1,30 @@
-<div class="list-title" data-controller="edit-list" data-edit-list-target="info">
-  <h3 class="mt-4 card-list-content text-center"  data-edit-list-target="title"><%= link_to list.title.capitalize, list_path(list), class:"slide-left-right"%>
-    <a href="#collapseExample" data-toggle="collapse">
-      <i class="far fa-edit list-fa ml-1 <%= 'd-none' if list.errors.any? %>" data-action="click->edit-list#displayForm"></i>
-    </a>
-  </h3>
+<%= link_to list_path(list) do %>
+  <div class="card card-index-list m-3" style="width: 16rem; height: 80%; " data-controller="edit-list" data-edit-list-target="info">
+    <%= list.photo.attached? ? (cl_image_tag list.photo.key, class: "card-img-top") : (image_tag asset_path("default-list-img.svg"), class: "card-img-top") %>
+    <div class="card-body card-body-list mb-3">
 
-  <%= simple_form_for list, remote: true, html: { class: list.errors.any? ? ' ' : 'd-none', data: { edit_list_target: 'form', action: 'submit->edit-list#update' } } do |f| %>
-    <div class="row d-flex justify-content-center py-4 collapse " id="collapseExample">
-      <div class="col-10 ">
-        <%= f.input :title, label: false, placeholder: 'My Books', input_html: { data: { edit_list_target: 'input', action: 'input->edit-list#check' } } %>
-      </div>
-      <div class="col-10 text-center">
-        <%= f.input :photo, input_html: { class: 'd-none'}, label_html: { class: 'upload-photo mt-2'}, label: '📷 Upload a photo'  %>
-      </div>
-      <div class="col-10 text-center">
-        <%= f.button :submit, class:'btn btn-primary', data: { edit_list_target: 'submit'} %>
+      <div class="list-title">
+        <h3 class="mt-4 card-list-content text-center <%= 'd-none' if list.errors.any? %>"  data-edit-list-target="title"><%= link_to list.title.capitalize, list_path(list), class:"slide-left-right"%>
+          <a href="#collapseExample" data-toggle="collapse">
+            <i class="far fa-edit list-fa ml-1 <%= 'd-none' if list.errors.any? %>" data-action="click->edit-list#displayForm"></i>
+          </a>
+        </h3>
+
+        <%= simple_form_for list, html: { class: list.errors.any? ? ' ' : 'd-none', data: { edit_list_target: 'form', action: 'submit->edit-list#update' } } do |f| %>
+          <div class="row d-flex justify-content-center py-4 collapse " id="collapseExample">
+            <div class="col-10 ">
+              <%= f.input :title, label: false, placeholder: 'My Books', input_html: { data: { edit_list_target: 'input', action: 'input->edit-list#check' } } %>
+            </div>
+            <div class="col-10 text-center">
+              <%= f.input :photo, input_html: { class: 'd-none', id: "photo-#{list.id}" }, label_html: { class: 'upload-photo mt-2'}, label: '📷 Upload a photo'  %>
+            </div>
+            <div class="col-10 text-center">
+              <%= f.button :submit, class:'btn btn-primary', data: { edit_list_target: 'submit'} %>
+            </div>
+          </div>
+
+        <% end %>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
